@@ -11,6 +11,10 @@
     background: #212429;
 }
 
+.side-container-box {
+    display: flex;
+}
+
 .side-container {
     width: 300px;
     height: 400px;
@@ -21,4 +25,12 @@
 
 .goods-img {
     width: 80%;
+}
+
+.drop-container {
+    width: 70%;
+    height: 30%;
+    background: #212429;
+    color: white;
+    display: block;
 }

@@ -1,13 +1,13 @@
 function temp(array) {
     array.forEach((element) => {
-        let template = `<div class="side-container">
-        <img src="/images/${element.photo}" alt="" class="goods-img">
+        let template = `<div class="side-container" draggable="true" ondragstart="drag(event)">
+        <img src="/images/${element.photo}" alt="" class="goods-img" draggable="true">
         <h4>${element.title}</h4>
         <h6>${element.brand}</h6>
         <p>가격 : ${element.price}</p>
-        <button type="button" class="btn btn-dark">담기</button>
+        <button type="button" class="btn btn-dark" onclick="basket()">담기</button>
         </div>`;
-        $('.main-container').append(template);
+        $('.side-container-box').append(template);
     });
 }
 
@@ -44,12 +44,12 @@ function consoleLog(){
                     let title_contents = yellowContent(data.products[i].title, 'h4', val);
                     let brand_contents = yellowContent(data.products[i].brand, 'h6', val);
                     
-                    let template = `<div class="side-container">
+                    let template = `<div class="side-container" draggable="true" ondragstart="drag(event)>
                     <img src="/images/${data.products[i].photo}" alt="" class="goods-img">
                     ${title_contents}
                     ${brand_contents}
                     <p>가격 : ${data.products[i].price}</p>
-                    <button type="button" class="btn btn-dark">담기</button>
+                    <button type="button" class="btn btn-dark" onclick="basket()">담기</button>
                     </div>`;
                     $('.main-container').append(template);
                 }
